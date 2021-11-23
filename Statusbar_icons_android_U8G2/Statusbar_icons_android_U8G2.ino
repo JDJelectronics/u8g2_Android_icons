@@ -230,6 +230,10 @@ const unsigned char battery_100[] U8X8_PROGMEM = {
 //=============================================================================
 
 //--WIFI icons---  13 by 12 pixels
+const unsigned char wifi_no_acces_to_internet[] U8X8_PROGMEM = {
+0xf0, 0x01, 0x0c, 0x06, 0x06, 0x0c, 0x03, 0x18, 0x01, 0x12, 0x03, 0x1a,
+0x06, 0x0a, 0x0c, 0x02, 0x18, 0x02, 0xb0, 0x02, 0xe0, 0x00, 0x40, 0x02 };
+   
 const unsigned char wifi_0[] U8X8_PROGMEM = {
 0xf0, 0x01, 0x0c, 0x06, 0x06, 0x0c, 0x03, 0x18, 0x01, 0x10, 0x03, 0x18,
 0x06, 0x0c, 0x0c, 0x06, 0x18, 0x03, 0xb0, 0x01, 0xe0, 0x00, 0x40, 0x00 };
@@ -288,6 +292,7 @@ void draw1()
    do {
    u8g2.drawXBMP(119, 0,  9, 12, battery_Charging);
    u8g2.drawXBMP(105, 0,  12, 12, noSignal_X);
+   u8g2.drawXBMP(89, 0,  13, 12, wifi_no_acces_to_internet);
    u8g2.drawHLine(0, 15, 128);
    u8g2.setFont(u8g2_font_haxrcorp4089_tr);
    u8g2.drawStr( 0, 10,"I'm offline"); 
@@ -302,8 +307,11 @@ void draw2()
 {  
    u8g2.firstPage();
    do {
-   u8g2.drawXBMP(119, 0,  9, 12, battery_Charging);
-   u8g2.drawXBMP(105, 0,  12, 12, noSignal_X);
+   u8g2.drawXBMP(119, 0,  9, 12, battery_0);
+   u8g2.drawXBMP(105, 0,  12, 12, signal_20);
+   u8g2.drawXBMP(89, 0,  13, 12, wifi_20);
+   u8g2.drawXBMP(55, 0,  13, 12, GPS);
+   u8g2.drawXBMP(45, 0,  13, 12, BT);
    u8g2.drawHLine(0, 15, 128);
    u8g2.setFont(u8g2_font_haxrcorp4089_tr);
    u8g2.drawStr( 0, 10,"I'm offline."); 
@@ -318,11 +326,14 @@ void draw3()
 {  
    u8g2.firstPage();
    do {
-   u8g2.drawXBMP(119, 0,  9, 12, battery_Charging);
-   u8g2.drawXBMP(105, 0,  12, 12, noSignal_X);
+   u8g2.drawXBMP(119, 0,  9, 12, battery_20);
+   u8g2.drawXBMP(105, 0,  12, 12, signal_50);
+   u8g2.drawXBMP(89, 0,  13, 12, wifi_50);
+   u8g2.drawXBMP(55, 0,  13, 12, GPS);
+   u8g2.drawXBMP(45, 0,  13, 12, BTc);
    u8g2.drawHLine(0, 15, 128);
    u8g2.setFont(u8g2_font_haxrcorp4089_tr);
-   u8g2.drawStr( 0, 10,"I'm offline.."); 
+   u8g2.drawStr( 0, 10,"I'm offline"); 
    u8g2.drawXBMP(30, 25,  60, 35, trex_scared);   
  } while ( u8g2.nextPage() ); 
       
@@ -334,11 +345,15 @@ void draw4()
 {  
    u8g2.firstPage();
    do {
-   u8g2.drawXBMP(119, 0,  9, 12, battery_Charging);
-   u8g2.drawXBMP(105, 0,  12, 12, noSignal_X);
+   u8g2.drawXBMP(119, 0,  9, 12, battery_100);
+   u8g2.drawXBMP(105, 0,  12, 12, signal_80_R);
+   u8g2.drawXBMP(89, 0,  13, 12, wifi_80);
+   u8g2.drawXBMP(73, 0,  13, 12, GPRS);
+   u8g2.drawXBMP(55, 0,  13, 12, GPS);
+   u8g2.drawXBMP(45, 0,  13, 12, BTc);
    u8g2.drawHLine(0, 15, 128);
    u8g2.setFont(u8g2_font_haxrcorp4089_tr);
-   u8g2.drawStr( 0, 10,"I'm offline..."); 
+   u8g2.drawStr( 0, 10,"I'm online"); 
    u8g2.drawXBMP(30, 25,  60, 35, trex_gameover);   
  } while ( u8g2.nextPage() ); 
       
