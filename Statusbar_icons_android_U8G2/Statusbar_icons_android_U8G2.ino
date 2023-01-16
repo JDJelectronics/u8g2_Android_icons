@@ -35,10 +35,18 @@
 #include <Wire.h>
 #endif
 
-  
- 
-U8G2_SSD1306_128X64_NONAME_1_SW_I2C u8g2(U8G2_R0, /* clock=*/ SCL1, /* data=*/ SDA1, /* reset=*/ U8X8_PIN_NONE);   // All Boards without Reset of the Display
-//U8G2_SH1106_128X64_NONAME_1_SW_I2C u8g2(U8G2_R0, /* clock=*/ SCL1, /* data=*/ SDA1, /* reset=*/ U8X8_PIN_NONE);   // All Boards without Reset of the Display
+//--OLED 0.91 INCH
+U8G2_SSD1306_128X32_UNIVISION_F_SW_I2C u8g2(U8G2_R0, /* clock=*/ SCL, /* data=*/ SDA, /* reset=*/ U8X8_PIN_NONE);      // All Boards without Reset of the Display 
+//U8G2_SSD1306_128X32_UNIVISION_F_SW_I2C u8g2(U8G2_R0, /* clock=*/ SCL1, /* data=*/ SDA1, /* reset=*/ U8X8_PIN_NONE);  // AVR128DB XX Series
+
+//--OLED 0.96 INCH 
+//U8G2_SSD1306_128X64_NONAME_F_SW_I2C u8g2(U8G2_R0, /* clock=*/ SCL, /* data=*/ SDA, /* reset=*/ U8X8_PIN_NONE);     // All Boards without Reset of the Display 
+//U8G2_SSD1306_128X64_NONAME_1_SW_I2C u8g2(U8G2_R0, /* clock=*/ SCL1, /* data=*/ SDA1, /* reset=*/ U8X8_PIN_NONE);   // AVR128DB XX Series
+
+//--OLED 1.3 INCH
+//U8G2_SH1106_128X64_NONAME_1_SW_I2C u8g2(U8G2_R0, /* clock=*/ SCL, /* data=*/ SDA, /* reset=*/ U8X8_PIN_NONE);      //All Boards without Reset of the Display 
+//U8G2_SH1106_128X64_NONAME_1_SW_I2C u8g2(U8G2_R0, /* clock=*/ SCL1, /* data=*/ SDA1, /* reset=*/ U8X8_PIN_NONE);    // AVR128DB XX Series
+
 
 uint32_t draw_Interval;
 
@@ -284,6 +292,59 @@ const unsigned char BTc[] U8X8_PROGMEM = {
 
 //=============================================================================
 
+//---JDJ SNAPCHAT LOGO--- 30 by 30 pixels
+const unsigned char Snapchat_logo[] U8X8_PROGMEM = {
+0x00, 0xc0, 0x00, 0x00, 0x00, 0xfc, 0x0f, 0x00, 0x00, 0xff, 0x3f, 0x00,
+0xc0, 0xff, 0xff, 0x00, 0xe0, 0xff, 0xff, 0x01, 0xf0, 0x1f, 0xfe, 0x03,
+0xf8, 0x07, 0xf8, 0x07, 0xfc, 0x03, 0xf0, 0x0f, 0xfc, 0x03, 0xf0, 0x0f,
+0xfe, 0x01, 0xe0, 0x1f, 0xfe, 0x01, 0xe0, 0x1f, 0xfe, 0x01, 0xe0, 0x1f,
+0xfe, 0x01, 0xe0, 0x1f, 0x7f, 0x00, 0x80, 0x3f, 0x7f, 0x00, 0x80, 0x3f,
+0xff, 0x01, 0xe0, 0x3f, 0xff, 0x01, 0xe0, 0x3f, 0xfe, 0x00, 0xc0, 0x1f,
+0xfe, 0x00, 0xc0, 0x1f, 0x3e, 0x00, 0x00, 0x1f, 0x1e, 0x00, 0x00, 0x1e,
+0x1c, 0x00, 0x00, 0x0e, 0x7c, 0x00, 0x80, 0x0f, 0xf8, 0x07, 0xf8, 0x07,
+0xf0, 0x1f, 0xfe, 0x03, 0xe0, 0xff, 0xff, 0x01, 0xc0, 0xff, 0xff, 0x00,
+0x80, 0xff, 0x7f, 0x00, 0x00, 0xfe, 0x1f, 0x00, 0x00, 0xf0, 0x03, 0x00 };
+
+//---JDJ SNAPCHAT--- 32 by 32 pixels
+const unsigned char Snapchat[] U8X8_PROGMEM = {
+0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0xe0, 0x07, 0x00,
+0x00, 0x18, 0x18, 0x00, 0x00, 0x04, 0x20, 0x00, 0x00, 0x02, 0x40, 0x00,
+0x00, 0x03, 0xc0, 0x00, 0x00, 0x01, 0x80, 0x00, 0x00, 0x31, 0x8c, 0x00,
+0x80, 0x31, 0x8c, 0x01, 0x80, 0x31, 0x8c, 0x01, 0x00, 0x01, 0x80, 0x00,
+0x00, 0x31, 0x84, 0x00, 0xf0, 0xe1, 0x87, 0x0f, 0x10, 0x00, 0x00, 0x08,
+0x60, 0x00, 0x00, 0x06, 0xc0, 0x00, 0x00, 0x03, 0x80, 0x01, 0x80, 0x01,
+0x80, 0x00, 0x00, 0x01, 0xc0, 0x00, 0x00, 0x03, 0x60, 0x00, 0x00, 0x06,
+0x3c, 0x00, 0x00, 0x3c, 0x06, 0x00, 0x00, 0x60, 0x02, 0x00, 0x00, 0x40,
+0x1c, 0x00, 0x00, 0x38, 0x30, 0x00, 0x00, 0x0c, 0xe0, 0x07, 0xe0, 0x07,
+0xc0, 0x0c, 0x30, 0x03, 0x00, 0x30, 0x0c, 0x00, 0x00, 0xe0, 0x07, 0x00,
+0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00 };
+
+//=============================================================================
+
+
+void drawSnap_Logo()
+{
+   u8g2.firstPage();
+   do {
+   u8g2.drawXBMP(0, 0,  30, 30, Snapchat_logo);
+   u8g2.setFont(u8g2_font_haxrcorp4089_tr);
+   u8g2.drawStr( 15, 15,"Oh Snap!");
+    } while ( u8g2.nextPage() );
+    
+}//drawSnap_logo
+
+void drawSnapchat()
+{
+   u8g2.firstPage();
+   do {
+   u8g2.drawXBMP(0, 0,  32, 32, Snapchat);
+   u8g2.setFont(u8g2_font_haxrcorp4089_tr);
+   u8g2.drawStr( 40, 15,"Oh Snap!");
+   u8g2.drawStr( 40, 25,"you're in the way.");
+    } while ( u8g2.nextPage() );
+    
+}//drawSnap_logo
+
 //=============================================================================
 
 void draw1()
@@ -368,45 +429,47 @@ void setup(void) {
 
 void loop(void) {
   
-  if ((int32_t)(millis() - draw_Interval) > 1000) {
-  u8g2.firstPage();
-  do {
-  u8g2.drawXBMP(0, 0,  9, 12, battery_Broken);
-  u8g2.drawXBMP(18, 0,  9, 12, battery_Charging);
-  u8g2.drawXBMP(36, 0,  9, 12, battery_0);
-  u8g2.drawXBMP(54, 0,  9, 12, battery_20);
-  u8g2.drawXBMP(72, 0,  9, 12, battery_50);
-  u8g2.drawXBMP(90, 0,  9, 12, battery_80);
-  u8g2.drawXBMP(108, 0,  9, 12, battery_100);
+//  if ((int32_t)(millis() - draw_Interval) > 1000) {
+//  u8g2.firstPage();
+//  do {
+//  u8g2.drawXBMP(0, 0,  9, 12, battery_Broken);
+//  u8g2.drawXBMP(18, 0,  9, 12, battery_Charging);
+//  u8g2.drawXBMP(36, 0,  9, 12, battery_0);
+//  u8g2.drawXBMP(54, 0,  9, 12, battery_20);
+//  u8g2.drawXBMP(72, 0,  9, 12, battery_50);
+//  u8g2.drawXBMP(90, 0,  9, 12, battery_80);
+//  u8g2.drawXBMP(108, 0,  9, 12, battery_100);
+//
+//  u8g2.drawXBMP(0, 20,  12, 12, noSignal);
+//  u8g2.drawXBMP(18, 20,  12, 12, signal_20);
+//  u8g2.drawXBMP(36, 20,  12, 12, signal_50);
+//  u8g2.drawXBMP(54, 20,  12, 12, signal_80);
+//  u8g2.drawXBMP(73, 20,  12, 12, signal_100);
+//
+//  u8g2.drawXBMP(0, 40,  12, 12, noSignal_X);
+//  u8g2.drawXBMP(18, 40,  12, 12, signal_20_R);
+//  u8g2.drawXBMP(36, 40,  13, 12, signal_50_R);
+//  u8g2.drawXBMP(54, 40,  13, 12, signal_80_R);
+//  u8g2.drawXBMP(73, 40,  13, 12, signal_100_R);
+//
+//  u8g2.drawXBMP(90, 40,  13, 12, wifi_0);
+//  u8g2.drawXBMP(108, 40,  13, 12, wifi_20);
+//  u8g2.drawXBMP(90, 20,  13, 12, wifi_50);
+//  u8g2.drawXBMP(108, 20,  13, 12, wifi_100);
+//  } while ( u8g2.nextPage() ); 
+//  
+//  delay(2000);
+//  draw1();
+//  delay(2000);
+//  draw2();
+//  delay(2000);
+//  draw3();
+//  delay(2000);
+//  draw4();
+//  delay(2000);
+//  }
 
-  u8g2.drawXBMP(0, 20,  12, 12, noSignal);
-  u8g2.drawXBMP(18, 20,  12, 12, signal_20);
-  u8g2.drawXBMP(36, 20,  12, 12, signal_50);
-  u8g2.drawXBMP(54, 20,  12, 12, signal_80);
-  u8g2.drawXBMP(73, 20,  12, 12, signal_100);
-
-  u8g2.drawXBMP(0, 40,  12, 12, noSignal_X);
-  u8g2.drawXBMP(18, 40,  12, 12, signal_20_R);
-  u8g2.drawXBMP(36, 40,  13, 12, signal_50_R);
-  u8g2.drawXBMP(54, 40,  13, 12, signal_80_R);
-  u8g2.drawXBMP(73, 40,  13, 12, signal_100_R);
-
-  u8g2.drawXBMP(90, 40,  13, 12, wifi_0);
-  u8g2.drawXBMP(108, 40,  13, 12, wifi_20);
-  u8g2.drawXBMP(90, 20,  13, 12, wifi_50);
-  u8g2.drawXBMP(108, 20,  13, 12, wifi_100);
-  } while ( u8g2.nextPage() ); 
-  
-  delay(2000);
-  draw1();
-  delay(2000);
-  draw2();
-  delay(2000);
-  draw3();
-  delay(2000);
-  draw4();
-  delay(2000);
-  }
+drawSnapchat();
  
 
 }
