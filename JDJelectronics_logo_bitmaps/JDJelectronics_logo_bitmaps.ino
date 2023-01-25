@@ -1,5 +1,5 @@
-/*  Statusbar_icons_android_U8G2
-**  Copyright (c) 2021 JDJ-ELECTRONICS
+/*  JDJelectronics_logo_bitmaps
+**  Copyright (c) 2023 JDJ-ELECTRONICS
 **
 **  TERMS OF USE: MIT License. See bottom of file.                                                            
 ***************************************************************************      
